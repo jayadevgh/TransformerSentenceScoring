@@ -28,7 +28,7 @@ $n_{\text{embd}} = 384$
 $n_{\text{head}} = 6$  
 $n_{\text{layer}} = 6$  
 $dropout = 0.2$  
-$block_{size} = 256$
+$block_{size} = 256 \\$
 for about 12.31 M params.
 Training schedule is a fixed 10 k steps with mixed precision and gradient accumulation.
 A held-out internal check landed at 91.64 % accuracy with final val loss 4.49.
