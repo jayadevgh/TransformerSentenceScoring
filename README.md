@@ -63,7 +63,7 @@ I reject exact duplicates and matches to any gold ( B ) from training, and if no
 I append and flush each pair and can `fsync` so the job can resume safely.
 
 I aim for a small bruise rather than a rewrite, so my ( \Delta ) values sit in a narrow band near zero and almost never cross below it.
-In a 30 k sample I saw only 2 pairs with ( \Delta \le 0 ).
+In a 30 k sample I saw only 2 pairs with $$( \Delta \le 0 )$$.
 The training file shows a much wider spread with heavy outliers in both directions and 2 211 pairs where ( B ) beats ( A ), which suggests stronger noise and some misalignments or rare → common substitutions that a next-token model likes statistically.
 My style better matches the task “make a corrupted version of the previous sentence” because meaning stays intact and the decision depends on agreement, local syntax, and punctuation fit.
 
