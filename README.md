@@ -24,11 +24,11 @@ Windows overlap so the last token of one window becomes context for the next, wh
 **Character LM** — I map characters to IDs with a small lookup and an `<unk>` escape for weird bytes. The model has 10.95 M params, a 256-token context, and I trained on the first sentences only. In a quick pass I saw 93.59 % accuracy on my internal training-style evaluation although I never properly made a training split. Known limits include no explicit BOS/EOS, short context, and heavy penalties when non-English bytes appear.
 **BPE Token LM** — Same Transformer core but inputs are BPE tokens with `<pad>`, `<bos>`, `<eos>`, `<unk>`.
 I run with
-$\texttt{n_embd}=384$,
-$\texttt{n_head}=6$,
-$\texttt{n_layer}=6$,
-$\texttt{dropout}=0.2$,
-$\texttt{block_size}=256$
+$n_{\text{embd}} = 384$  
+$n_{\text{head}} = 6$  
+$n_{\text{layer}} = 6$  
+$dropout = 0.2$  
+$block_{size} = 256$
 for about 12.31 M params.
 Training schedule is a fixed 10 k steps with mixed precision and gradient accumulation.
 A held-out internal check landed at 91.64 % accuracy with final val loss 4.49.
